@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class DBDemo3 {
   public static void main(String[] args) {
     Connection con = DBDemo.makeConnection();
-    String sql = "UPDATE table1 SET address = '프랑스 파리' WHERE (id = 4)";
+    String sql = "UPDATE table1 SET address = ? WHERE (id = ?)";
 
     Statement stmt = null;
     try {

@@ -26,16 +26,28 @@ public class DBDemo {
 
   public static void main(String[] args) {
     Connection con = makeConnection();// MySql 드라이버 연결하고 접속한 conn 을 반환해 주는 메소드 호출
-    String sql = "SELECT * FROM table1";
+    String sql = "SELECT * FROM table1 where id = ? and name= ? ";
 
-    Statement stmt = null;
+    PreparedStatement stmt = null;
     try {
-      stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery(sql);
+      stmt = con.prepareStatement(sql);
+      stmt.setInt(1, 1);
+      stmt.setString(2, "홍길동");
+      ResultSet rs = stmt.executeQuery();
+
       while(rs.next()) {
         System.out.println(rs.getString("name"));
         System.out.println(rs.getString("address"));
       }
+
+      stmt.setInt(1, 2);
+      stmt.setString(2, "박세리");
+      rs = stmt.executeQuery();
+      while(rs.next()) {
+        System.out.println(rs.getString("name"));
+        System.out.println(rs.getString("address"));
+      }
+
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }

@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class DBDemo2 {
   public static void main(String[] args) {
     Connection con = DBDemo.makeConnection();
-    String sql = "INSERT INTO `table1` (`id`, `name`, `address`) VALUES ('4', '손흥민', 'USA')";
+    String sql = "INSERT INTO `table1` (`id`, `name`, `address`) VALUES (?, ?, ?)";
 
     Statement stmt = null;
     try {

@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class DBDemo4 {
   public static void main(String[] args) {
     Connection con = DBDemo.makeConnection();
-    String sql = "DELETE FROM table1 WHERE (id = 4)";
+    String sql = "DELETE FROM table1 WHERE (id = ?)";
 
     Statement stmt = null;
     try {
