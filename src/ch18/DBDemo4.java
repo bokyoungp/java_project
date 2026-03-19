@@ -1,18 +1,25 @@
 package ch18;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DBDemo4 {
   public static void main(String[] args) {
     Connection con = DBDemo.makeConnection();
     String sql = "DELETE FROM table1 WHERE (id = ?)";
 
-    Statement stmt = null;
+    PreparedStatement stmt = null;
     try {
-      stmt = con.createStatement();
-      int count = stmt.executeUpdate(sql);
+      stmt = con.prepareStatement(sql);
+      stmt.setInt(1, 10);
+      int count = stmt.executeUpdate();
+
+      stmt.setInt(1, 11);
+      count = stmt.executeUpdate();
+
+      stmt.setInt(1, 12);
+      count = stmt.executeUpdate();
       if(count > 0) {
         System.out.println(count + " 건의 데이터가 삭제되었습니다.");
       } else {

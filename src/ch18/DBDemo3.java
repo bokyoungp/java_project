@@ -1,18 +1,20 @@
 package ch18;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DBDemo3 {
   public static void main(String[] args) {
     Connection con = DBDemo.makeConnection();
     String sql = "UPDATE table1 SET address = ? WHERE (id = ?)";
 
-    Statement stmt = null;
+    PreparedStatement stmt = null;
     try {
-      stmt = con.createStatement();
-      int count = stmt.executeUpdate(sql);
+      stmt = con.prepareStatement(sql);
+      stmt.setString(1,"USA");
+      stmt.setInt(2,2);
+      int count = stmt.executeUpdate();
       if(count > 0) {
         System.out.println(count + " 건의 데이터가 수정되었습니다.");
       } else {
