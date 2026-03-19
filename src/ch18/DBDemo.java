@@ -40,7 +40,6 @@ public class DBDemo {
       throw new RuntimeException(e);
     }
 
-
   }
 
 }
