@@ -3,11 +3,12 @@ package bank_application;
 import java.util.*;
 
 public class OriBankApplication {
-  public class ShinhanBankApplication {
+
     public static void main(String[] args) {
-      Map<Integer, Clerk> clerkMap = new HashMap<>();
-//      Clerk bankClerk = new Clerk();// 240101, "이신한" 생성자 만들고 수정하기
-//      clerkMap.put(240101, bankClerk);
+      Map<String, Clerk> clerkMap = new HashMap<>();
+      Clerk bankClerk = new Clerk("1", "이신한");
+      clerkMap.put("1", bankClerk );
+
       Map<String, Account> accountMap = new HashMap<>();
       Map<Account, List<Transaction>> transactionMap = new HashMap<>();
       Map<String, Client> clientMap = new HashMap<>();
@@ -74,4 +75,3 @@ public class OriBankApplication {
       } // end of menu select
     } // end of method (main)
   } // end of class
-}
