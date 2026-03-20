@@ -5,7 +5,7 @@ import java.util.*;
 public class OriBankApplication {
   public class ShinhanBankApplication {
     public static void main(String[] args) {
- //     Map<Integer, Clerk> clerkMap = new HashMap<>();
+      Map<Integer, Clerk> clerkMap = new HashMap<>();
 //      Clerk bankClerk = new Clerk();// 240101, "이신한" 생성자 만들고 수정하기
 //      clerkMap.put(240101, bankClerk);
       Map<String, Account> accountMap = new HashMap<>();
@@ -25,7 +25,7 @@ public class OriBankApplication {
 
       String biz1 = """
 				---------------------------------------------------------------
-				1: 계좌개설, 2: 목록 3: 입금, 4: 출금, 5: 조회, 6: 계좌해지, 0: 종료
+				1: 계좌개설, 2: 목록, 3: 입금, 4: 출금, 5: 조회, 6: 계좌해지, 0: 종료
 				---------------------------------------------------------------
 				""";
       System.out.print(biz1);
