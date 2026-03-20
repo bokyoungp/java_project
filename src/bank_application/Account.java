@@ -1,5 +1,8 @@
 package bank_application;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Account {
   // 필드 - 계좌번호, 계좌주, 초기입금액
   private int code;
@@ -56,6 +59,43 @@ public class Account {
 
   public int getBalance() {
     return balance;
+  }
+
+  // 메서드
+
+  // 메서드
+  // 입금 기능 추가
+  public void deposit(int money) {
+    balance += money;
+  }
+  // 출금 기능 추가
+  public void withdraw(int money) {
+    // 잔고보다 더 많이 인출할 수 없음
+    if(balance < money) {
+      System.out.println("잔액 부족");
+    } else {
+      balance -= money;
+      System.out.println("출금이 성공되었습니다.");
+    }
+  }
+
+  public int inquiry() {
+    return balance;
+  }
+
+  public void cancelAccount() {
+    this.closedate = LocalDate.now().format(DateTimeFormatter.ofPattern("YYYY-MM-DD"));
+  }
+
+  public void setActive() {
+    this.active = !this.active;
+  }
+  // 계좌 정보 출력
+  @Override
+  public String toString() {
+    return code + "\t" +
+        client.getName() + "\t" +
+        balance ;
   }
 
 
