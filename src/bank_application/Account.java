@@ -62,8 +62,6 @@ public class Account {
   }
 
   // 메서드
-
-  // 메서드
   // 입금 기능 추가
   public void deposit(int money) {
     balance += money;
