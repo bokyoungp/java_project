@@ -24,9 +24,9 @@ public class OriBankApplication {
       Transaction transaction = null;
 
       String biz1 = """
-				-----------------------------------------------------
-				1: 계좌개설, 2:입금, 3:출금, 4:조회, 5: 계좌해지, 0: 종료
-				-----------------------------------------------------
+				---------------------------------------------------------------
+				1: 계좌개설, 2: 목록 3: 입금, 4: 출금, 5: 조회, 6: 계좌해지, 0: 종료
+				---------------------------------------------------------------
 				""";
       System.out.print(biz1);
       System.out.print("업무 구분 코드 > ");
@@ -58,11 +58,16 @@ public class OriBankApplication {
 //
 //			}
         // 처리 --> 계좌 개설 완료 / Transaction , Account
-
       } else if (menu.equals("2")) {
-        System.out.println("입금 처리 중 ");
+        System.out.println("목록 처리 중 ");
       } else if (menu.equals("3")) {
+        System.out.println("입금 처리 중 ");
+      } else if (menu.equals("4")) {
         System.out.println("출금 처리 중 ");
+      } else if (menu.equals("5")) {
+        System.out.println("조회 처리 중 ");
+      } else if (menu.equals("6")) {
+        System.out.println("해지 처리 중 ");
       } else if (menu.equals("0")) {
         System.out.println("은행 업무를 종료합니다.");
         return;
