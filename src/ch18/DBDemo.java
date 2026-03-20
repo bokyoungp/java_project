@@ -41,7 +41,7 @@ public class DBDemo {
       }
 
       stmt.setInt(1, 2);
-      stmt.setString(2, "박세리");
+      stmt.setString(2, "손흥민");
       rs = stmt.executeQuery();
       while(rs.next()) {
         System.out.println(rs.getString("name"));
