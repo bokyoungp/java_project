@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class DBDemo {
   public static Connection makeConnection() {
-    String url = "jdbc:mysql://localhost/test?serverTimezone=Asia/Seoul";
+    String url = "jdbc:mysql://localhost:3326/test?serverTimezone=Asia/Seoul";
 
     Connection con = null;
     try {
