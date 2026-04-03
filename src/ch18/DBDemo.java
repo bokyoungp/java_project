@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class DBDemo {
   public static Connection makeConnection() {
-    String url = "jdbc:mysql://localhost:3326/test?serverTimezone=Asia/Seoul";
+    String url = "jdbc:mysql://192.168.0.25/test?serverTimezone=Asia/Seoul";
 
     Connection con = null;
     try {
@@ -26,7 +26,7 @@ public class DBDemo {
 
   public static void main(String[] args) {
     Connection con = makeConnection();// MySql 드라이버 연결하고 접속한 conn 을 반환해 주는 메소드 호출
-    String sql = "SELECT * FROM table1 where id = ? and name= ? ";
+    String sql = "SELECT * FROM users where id = ? and name= ? ";
 
     PreparedStatement stmt = null;
     try {
